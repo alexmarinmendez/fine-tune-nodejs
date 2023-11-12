@@ -14,8 +14,14 @@ async function UploadFile(req, res) {
     res.send(response)
 }
 
+async function ListFiles(req, res) {
+    const response = await fileService.ListFiles()
+    res.send(response.data)
+}
+
 module.exports = {
     Test,
     TransformData,
-    UploadFile
+    UploadFile,
+    ListFiles
 }

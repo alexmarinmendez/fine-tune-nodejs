@@ -1,6 +1,5 @@
 var xlsx = require('xlsx')
 const fs = require('fs')
-// const { Configuration, OpenAIApi } = require('openai')
 const OpenAI = require('openai')
 require('dotenv').config()
 const openai = new OpenAI({ apiKey: process.env.OPENAI_APIKEY })
@@ -21,7 +20,12 @@ async function UploadFile() {
     return response
 }
 
+async function ListFiles() {
+    return await openai.files.list()
+}
+
 module.exports = {
     TransformData,
-    UploadFile
+    UploadFile,
+    ListFiles
 }
