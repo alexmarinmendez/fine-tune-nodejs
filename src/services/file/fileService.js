@@ -1,5 +1,6 @@
 var xlsx = require('xlsx')
 const fs = require('fs')
+const { Configuration, OpenAIApi } = require('openai')
 
 async function TransformData() {
     var workbook = xlsx.readFile('src/shared/data-set.xlsx')
@@ -12,6 +13,14 @@ async function TransformData() {
     }
 }
 
+async function UploadFile() {
+    const configuration = new Configuration({apiKey: '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'})
+    const openai = new OpenAIApi(configuration)
+    const response = openai.createFile(fs.createReadStream('src/shared/data-set.jsonl'), "fine-tune")
+    return response
+}
+
 module.exports = {
-    TransformData
+    TransformData,
+    UploadFile
 }
