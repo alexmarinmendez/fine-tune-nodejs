@@ -25,7 +25,11 @@ async function ListFiles() {
 }
 
 async function RetrieveFile(fileId) {
-    return await openai.files.retrieve(fileId)
+    try {
+        return await openai.files.retrieve(fileId)
+    } catch(err) {
+        return "fileId not found"
+    }
 }
 
 module.exports = {

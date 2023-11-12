@@ -21,8 +21,10 @@ async function ListFiles(req, res) {
 
 async function RetrieveFile(req, res) {
     var fileId = req.query["fileId"]
-    console.log(fileId)
     const response = await fileService.RetrieveFile(fileId)
+    if (response == "fileId not found") {
+        return res.status(404).send('fileId not found')
+    }
     res.send(response)
 }
 
