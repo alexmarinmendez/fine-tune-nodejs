@@ -1,4 +1,7 @@
 # fine-tune-nodejs
+<h4 align="center">
+:construction: Under construction :construction:
+</h4>
 My first time using **fine tunning process** in order to develop **my own gpt customize model**
 
 ## express-api
@@ -9,7 +12,10 @@ This project is an express api that has endpoints to:
 * Retrive an specific file from its id
 * Others coming soon...
 
-# Author
+## Author
 * Alex Marin Mendez - 
 [LinkedIn](https://www.linkedin.com/in/alexmarinmendez/ "Author's LinkedIn profile") - 
 [GitHub](https://github.com/alexmarinmendez "Author's GitHub profile") - [Email](alexmarinmendez@gmail.com "Author's email")
+
+[!IMPORTANT]
+This project is inspired and adapted from [Yudner Paredes](https://github.com/Yudner), the original author. 
