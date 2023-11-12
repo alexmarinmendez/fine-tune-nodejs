@@ -19,9 +19,17 @@ async function ListFiles(req, res) {
     res.send(response.data)
 }
 
+async function RetrieveFile(req, res) {
+    var fileId = req.query["fileId"]
+    console.log(fileId)
+    const response = await fileService.RetrieveFile(fileId)
+    res.send(response)
+}
+
 module.exports = {
     Test,
     TransformData,
     UploadFile,
-    ListFiles
+    ListFiles,
+    RetrieveFile
 }

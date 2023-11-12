@@ -24,8 +24,13 @@ async function ListFiles() {
     return await openai.files.list()
 }
 
+async function RetrieveFile(fileId) {
+    return await openai.files.retrieve(fileId)
+}
+
 module.exports = {
     TransformData,
     UploadFile,
-    ListFiles
+    ListFiles,
+    RetrieveFile
 }
