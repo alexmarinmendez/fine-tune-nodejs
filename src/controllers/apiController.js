@@ -11,7 +11,7 @@ async function TransformData(req, res) {
 
 async function UploadFile(req, res) {
     const response = await fileService.UploadFile()
-    res.status(response.status).send(response.data)
+    res.send(response)
 }
 
 module.exports = {

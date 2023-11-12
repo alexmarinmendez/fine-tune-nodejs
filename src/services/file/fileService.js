@@ -1,6 +1,7 @@
 var xlsx = require('xlsx')
 const fs = require('fs')
-const { Configuration, OpenAIApi } = require('openai')
+// const { Configuration, OpenAIApi } = require('openai')
+const OpenAI = require('openai')
 require('dotenv').config()
 
 async function TransformData() {
@@ -15,9 +16,11 @@ async function TransformData() {
 }
 
 async function UploadFile() {
-    const configuration = new Configuration({ apiKey: process.env.OPENAI_APIKEY })
-    const openai = new OpenAIApi(configuration)
-    const response = openai.createFile(fs.createReadStream('src/shared/data-set.jsonl'), "fine-tune")
+    // const configuration = new Configuration({ apiKey: process.env.OPENAI_APIKEY })
+    const openai = new OpenAI({ apiKey: process.env.OPENAI_APIKEY })
+    // const openai = new OpenAIApi(configuration)
+    // const response = openai.createFile(fs.createReadStream('src/shared/data-set.jsonl'), "fine-tune")
+    const response = await openai.files.create({ file: fs.createReadStream('src/shared/data-set.jsonl'), purpose: 'fine-tune' });
     return response
 }
 
