@@ -7,6 +7,8 @@ This project is an express api that has endpoints to:
 * Upload the file to OpenAI
 * Get the list of all files
 * Retrive an specific file from its id
+* Create a Fine Tune process
+* List Fine Tunning process from OpenAI
 * Others coming soon...
 
 ## Author
@@ -14,5 +16,5 @@ This project is an express api that has endpoints to:
 [LinkedIn](https://www.linkedin.com/in/alexmarinmendez/ "Author's LinkedIn profile") - 
 [GitHub](https://github.com/alexmarinmendez "Author's GitHub profile") - [Email](alexmarinmendez@gmail.com "Author's email")
 
-[!IMPORTANT]
-This project is inspired and updated from [Yudner Paredes](https://github.com/Yudner), the original author. 
+# :hammer: IMPORTANT: 
+This work is adapted and updated from an original idea of [Yudner Paredes](https://github.com/Yudner). 
