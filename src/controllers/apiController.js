@@ -1,9 +1,11 @@
 const fileService = require('../services/file/fileService')
+const finetuneService = require('../services/file/finetuneService')
 
 async function Test(req, res) {
     res.send("test Ok")
 }
 
+//#region File
 async function TransformData(req, res) {
     await fileService.TransformData()
     res.send()
@@ -27,11 +29,28 @@ async function RetrieveFile(req, res) {
     }
     res.send(response)
 }
+//#endregion
+
+
+//#region FineTune
+async function CreateFineTune(req, res) {
+    var fileId = req.query["fileId"]
+    const response = await finetuneService.CreateFineTune(fileId)
+    res.send(response)
+}
+
+async function ListFineTunes(req, res) {
+    const response = await finetuneService.ListFineTunes()
+    res.send(response)
+}
+//#endregion
 
 module.exports = {
     Test,
     TransformData,
     UploadFile,
     ListFiles,
-    RetrieveFile
+    RetrieveFile,
+    CreateFineTune,
+    ListFineTunes
 }
